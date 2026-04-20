@@ -1,0 +1,13 @@
+{
+  "name": "loklify-sdk",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev":   "pnpm -r run dev",
+    "lint":  "pnpm -r run lint",
+    "test":  "pnpm -r run test"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
