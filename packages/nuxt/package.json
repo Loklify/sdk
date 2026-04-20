@@ -1,38 +1,45 @@
 {
   "name": "@loklify/nuxt",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Loklify SDK — Nuxt module",
   "type": "module",
-  "main":   "./dist/module.cjs",
+  "main": "./dist/module.cjs",
   "module": "./dist/module.js",
-  "types":  "./dist/module.d.ts",
+  "types": "./dist/module.d.ts",
   "exports": {
     ".": {
-      "import":  "./dist/module.js",
-      "require": "./dist/module.cjs",
-      "types":   "./dist/module.d.ts"
+      "types": "./dist/module.d.ts",
+      "import": "./dist/module.js",
+      "require": "./dist/module.cjs"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "dev":   "tsup --watch"
+    "dev": "tsup --watch"
   },
   "peerDependencies": {
-    "nuxt":     ">=3.0.0",
+    "nuxt": ">=3.0.0",
+    "@nuxt/kit": ">=3.0.0",
     "vue-i18n": ">=9.0.0"
   },
   "peerDependenciesMeta": {
-    "vue-i18n": { "optional": true }
+    "vue-i18n": {
+      "optional": true
+    }
   },
   "dependencies": {
-    "@loklify/vue":  "workspace:*",
-    "@loklify/core": "workspace:*",
-    "@nuxt/kit":     "^3.12.0"
+    "@loklify/vue": "^0.1.0"
   },
   "devDependencies": {
-    "tsup":       "^8.0.0",
-    "nuxt":       "^3.12.0",
+    "tsup": "^8.0.0",
+    "@nuxt/kit": "^4.0.0",
+    "nuxt": "^4.0.0",
     "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

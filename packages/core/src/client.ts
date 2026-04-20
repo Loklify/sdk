@@ -1,6 +1,6 @@
 import type { LoklifyOptions, Messages } from './types'
 
-const DEFAULT_API_BASE = 'https://app.loklify.io'
+const DEFAULT_API_BASE = 'https://api.loklify.com'
 
 export class LoklifyClient {
   private project:  string
