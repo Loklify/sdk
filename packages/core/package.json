@@ -1,7 +1,26 @@
 {
   "name": "@loklify/core",
-  "version": "0.1.2",
-  "description": "Loklify SDK — core fetch & cache",
+  "version": "0.1.3",
+  "description": "Loklify SDK · framework-agnostic translation client. Fetches i18n keys from your Loklify project at runtime.",
+  "keywords": [
+    "loklify",
+    "i18n",
+    "internationalization",
+    "translations",
+    "translation-management",
+    "localization",
+    "l10n"
+  ],
+  "homepage": "https://loklify.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loklify/sdk.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/loklify/sdk/issues"
+  },
+  "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

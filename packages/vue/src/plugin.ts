@@ -24,7 +24,9 @@ export function createLoklify(options: LoklifyVueOptions) {
     if (loaded.has(lang)) return
     try {
       const messages = await client.loadLocale(lang)
+      console.log('[loklify] messages received:', messages)
       options.i18n?.setLocaleMessage(lang, messages)
+      console.log('[loklify] setLocaleMessage called for', lang)
       loaded.add(lang)
     } catch (err) {
       console.warn('[loklify]', err)

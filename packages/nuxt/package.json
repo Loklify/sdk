@@ -1,16 +1,39 @@
 {
   "name": "@loklify/nuxt",
-  "version": "0.1.2",
-  "description": "Loklify SDK — Nuxt module",
+  "version": "0.2.2",
+  "description": "Loklify SDK · Nuxt 3/4 module. Zero-config translation loading via @nuxtjs/i18n integration.",
+  "keywords": [
+    "loklify",
+    "nuxt",
+    "nuxt3",
+    "nuxt-module",
+    "vue-i18n",
+    "@nuxtjs/i18n",
+    "i18n",
+    "internationalization",
+    "translations",
+    "translation-management",
+    "localization",
+    "l10n"
+  ],
+  "homepage": "https://loklify.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loklify/sdk.git",
+    "directory": "packages/nuxt"
+  },
+  "bugs": {
+    "url": "https://github.com/loklify/sdk/issues"
+  },
+  "license": "MIT",
   "type": "module",
-  "main": "./dist/module.cjs",
+  "main": "./dist/module.js",
   "module": "./dist/module.js",
   "types": "./dist/module.d.ts",
   "exports": {
     ".": {
       "types": "./dist/module.d.ts",
-      "import": "./dist/module.js",
-      "require": "./dist/module.cjs"
+      "import": "./dist/module.js"
     }
   },
   "files": [
@@ -31,11 +54,12 @@
     }
   },
   "dependencies": {
-    "@loklify/vue": "^0.1.0"
+    "@loklify/vue": "^0.1.5"
   },
   "devDependencies": {
     "tsup": "^8.0.0",
     "@nuxt/kit": "^4.0.0",
+    "@nuxt/schema": "^4.0.0",
     "nuxt": "^4.0.0",
     "typescript": "^5.4.0"
   },

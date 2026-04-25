@@ -1,4 +1,20 @@
-import { defineNuxtModule, addPluginTemplate } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+
+declare module '@nuxt/schema' {
+  interface NuxtConfig {
+    loklify?: Partial<ModuleOptions>
+  }
+  interface NuxtOptions {
+    loklify?: Partial<ModuleOptions>
+  }
+  interface PublicRuntimeConfig {
+    loklify: {
+      project: string
+      apiBase: string
+      token:   string
+    }
+  }
+}
 
 export interface ModuleOptions {
   /** ID du projet Loklify */
@@ -26,32 +42,7 @@ export default defineNuxtModule<ModuleOptions>({
       token:   options.token ?? '',
     }
 
-    // Génère le plugin directement dans .nuxt/ pour éviter
-    // les problèmes de résolution de chemin avec Nuxt 4
-    addPluginTemplate({
-      filename: 'loklify.client.mjs',
-      getContents: () => `
-import { defineNuxtPlugin, useRuntimeConfig } from 'nuxt/app'
-import { createLoklify } from '@loklify/vue'
-
-export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig()
-  const opts = config.public.loklify
-  const i18n = nuxtApp.$i18n ?? undefined
-
-  const plugin = createLoklify({
-    project: opts.project,
-    apiBase:  opts.apiBase,
-    token:    opts.token || undefined,
-    i18n: i18n ? {
-      locale:           i18n.locale,
-      setLocaleMessage: i18n.setLocaleMessage.bind(i18n),
-    } : undefined,
-  })
-
-  nuxtApp.vueApp.use(plugin)
-})
-`.trimStart(),
-    })
+    const { resolve } = createResolver(import.meta.url)
+    addPlugin({ src: resolve('./runtime/plugin.client'), mode: 'client' })
   },
 })
