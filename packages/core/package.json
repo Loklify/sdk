@@ -1,6 +1,6 @@
 {
   "name": "@loklify/core",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Loklify SDK · framework-agnostic translation client. Fetches i18n keys from your Loklify project at runtime.",
   "keywords": [
     "loklify",

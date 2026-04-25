@@ -1,6 +1,6 @@
 {
   "name": "@loklify/nuxt",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Loklify SDK · Nuxt 3/4 module. Zero-config translation loading via @nuxtjs/i18n integration.",
   "keywords": [
     "loklify",
